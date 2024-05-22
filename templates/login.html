@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link href="/static/bootstrap.min.css?version=53980" rel="stylesheet">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+</head>
+<body>
+<div class="container ">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+      <a href="/static" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <img src="/static/logo.png" height="72px">
+      </a>
+
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="#" class="nav-link">Фичи месяца</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Проекты</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Поддержка</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Информация</a></li>
+      </ul>
+    </header>
+    <main class="form-signin w-100 m-auto d-flex align-items-center">
+      <form novalidate="" action="" method="post">
+        <img class="mb-4" src="/static/hello.png" alt="" width="512" height="512">
+        <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+          {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <div class="notification is-danger">
+                <h2 style="color: #a52834">
+                  {{ messages[0] }}.
+                </h2>
+            </div>
+          {% endif %}
+          {% endwith %}
+
+        <div class="form-floating">
+          <input type="email" name="email" class="form-control" id="email" placeholder="name@example.com" value="" required="">
+          <label for="email">Email address</label>
+        </div>
+        <div class="form-floating">
+          <input type="password" name="password" class="form-control" id="password" placeholder="Password" value="" required="">
+          <label for="password">Password</label>
+        </div>
+           ㅤ
+        <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
+      </form>
+    </main>
+    <footer class="my-5 pt-5 text-body-secondary text-center text-small">
+        <p class="mb-1">© 2017–2023 Company Name</p>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="#">Privacy</a></li>
+            <li class="list-inline-item"><a href="#">Terms</a></li>
+            <li class="list-inline-item"><a href="#">Support</a></li>
+        </ul>
+    </footer>
+</div>
+</body>
+</html>
